@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,17 +19,31 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: hsl(183, 100%, 15%);
+  font-family: "Space Mono", monospace !important;
+  font-weight: 700;
+  background-color: hsl(185, 41%, 84%);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::placeholder{
+  text-align: end;
+
+}
+
+.custom::placeholder{
+  padding-left: 15px;
+  color: hsl(183, 100%, 15%);
+  opacity: 50%;
+}
+
+@media screen and (max-width: 400px) {
+    .custom::placeholder{
+      padding-right: 10px;
+    }
 }

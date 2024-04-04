@@ -55,7 +55,7 @@ const CalculatorComponent = () => {
                             <span className='absolute text-gray-400 text-2xl font-normal top-[14px] left-4'>
                                 <Image src={dollar} alt='Dollar Sign'/>
                             </span>
-                            <input value={bill == 0 ? "" : bill} type="number" name="bill" placeholder='0' className='bg-veryLightGrayishCyan h-12 rounded-xl text-xl text-right pr-5 w-full' onChange={(e) => setBill(parseFloat(e.target.value))}/>
+                            <input value={bill == 0 ? "" : bill} type="number" name="bill" placeholder='0' className='bg-veryLightGrayishCyan h-12 rounded-xl text-xl text-right pr-5 w-full' onChange={(e) => setBill(parseFloat(e.target.value))} min={0} onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                         </div>
                     </div>
 
@@ -137,7 +137,7 @@ const CalculatorComponent = () => {
                             <span className='absolute text-gray-400 text-2xl font-normal top-[14px] left-4'>
                                 <Image src={person} alt='Person Icon'/>
                             </span>
-                            <input value={people === 0 ? "" : people} type="number" name="bill" placeholder='0' className='bg-veryLightGrayishCyan h-12 rounded-xl text-xl text-right pr-5 w-full' onChange={(e) => setPeople(parseFloat(e.target.value))} required/>
+                            <input value={people === 0 ? "" : people} type="number" name="bill" placeholder='0' className='bg-veryLightGrayishCyan h-12 rounded-xl text-xl text-right pr-5 w-full' onChange={(e) => setPeople(parseFloat(e.target.value))} required min={0} onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                         </div>
                     </div>
                 </div>
